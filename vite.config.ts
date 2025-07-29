@@ -21,11 +21,14 @@ export default defineConfig({
     },
   },
   build: {
+    sourcemap: false,
     rollupOptions: {
-      onwarn(warning, warn) {
-        // Suppress all warnings
-        return;
+      output: {
+        manualChunks: undefined,
       },
     },
+  },
+  define: {
+    global: "globalThis",
   },
 });

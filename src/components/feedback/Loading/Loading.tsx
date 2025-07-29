@@ -4,7 +4,7 @@ import CartSkeleton from "../skeletons/CartSkeleton/CartSkeleton";
 import LottieHandler from "../LottieHandler/LottieHandler";
 import TableSkeleton from "../skeletons/TableSkeleton/TableSkeleton";
 
-import type { TLoading } from "@types";
+type TLoading = "idle" | "pending" | "succeeded" | "failed";
 
 const skeletonsTypes = {
   category: CategorySkeleton,

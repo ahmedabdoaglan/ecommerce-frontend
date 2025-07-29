@@ -1,0 +1,297 @@
+/* About Us Page Styles */
+.aboutPage {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.heroSection {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.heroContent {
+  padding: 20px 0;
+}
+
+.heroDescription {
+  font-size: 1.1rem;
+  color: #6c757d;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.heroStats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  text-align: center;
+  flex: 1;
+  min-width: 100px;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #17a2b8;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.heroImage {
+  padding: 20px 0;
+}
+
+/* Story Section */
+.storySection {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.storyText {
+  font-size: 1.1rem;
+  color: #6c757d;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Values Section */
+.valuesSection {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.valueCard {
+  height: 100%;
+  border: none;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.valueIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.valueTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 1rem;
+}
+
+.valueDescription {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Team Section */
+.teamSection {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.teamCard {
+  height: 100%;
+  border: none;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.teamCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.teamImageWrapper {
+  padding: 2rem 2rem 1rem;
+  text-align: center;
+}
+
+.teamImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f8f9fa;
+  transition: transform 0.3s ease;
+}
+
+.teamCard:hover .teamImage {
+  transform: scale(1.05);
+}
+
+.teamName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.teamRole {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.teamDescription {
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Technology Section */
+.techSection {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.techDescription {
+  font-size: 1.1rem;
+  color: #6c757d;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.techStack {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.techBadge {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Contact Section */
+.contactSection {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #212529 0%, #495057 100%);
+  color: white;
+}
+
+.contactContent {
+  padding: 2rem;
+}
+
+.contactTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.contactDescription {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.contactInfo {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.contactInfo strong {
+  color: #17a2b8;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .heroStats {
+    justify-content: center;
+  }
+
+  .techStack {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection,
+  .storySection,
+  .valuesSection,
+  .teamSection,
+  .techSection,
+  .contactSection {
+    padding: 60px 0;
+  }
+
+  .heroStats {
+    gap: 1rem;
+  }
+
+  .statNumber {
+    font-size: 1.75rem;
+  }
+
+  .heroDescription,
+  .storyText,
+  .techDescription,
+  .contactDescription {
+    font-size: 1rem;
+  }
+
+  .contactTitle {
+    font-size: 2rem;
+  }
+
+  .techStack {
+    gap: 0.5rem;
+  }
+
+  .techBadge {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroStats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .statItem {
+    min-width: auto;
+  }
+
+  .teamImageWrapper {
+    padding: 1.5rem;
+  }
+
+  .teamImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .contactTitle {
+    font-size: 1.75rem;
+  }
+
+  .contactContent {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.container span {
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+}

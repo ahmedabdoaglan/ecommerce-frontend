@@ -1,0 +1,40 @@
+.notFound {
+  padding-top: 15%;
+  text-align: center;
+}
+
+.notFound h1 {
+  font-size: 130px;
+}
+
+.notFound p {
+  font-size: 50px;
+}
+
+@media (max-width: 768px) {
+  .notFound {
+    padding-top: 20%;
+  }
+
+  .notFound h1 {
+    font-size: 100px;
+  }
+
+  .notFound p {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .notFound {
+    padding-top: 25%;
+  }
+
+  .notFound h1 {
+    font-size: 80px;
+  }
+
+  .notFound p {
+    font-size: 30px;
+  }
+}

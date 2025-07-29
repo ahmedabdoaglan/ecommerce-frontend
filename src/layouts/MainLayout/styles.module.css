@@ -1,0 +1,22 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  margin-top: 30px;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    margin-top: 15px;
+  }
+}

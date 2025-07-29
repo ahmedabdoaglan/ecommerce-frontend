@@ -1,0 +1,41 @@
+.headerContainer {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerLogo {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: 2.3rem;
+  margin: 0;
+}
+
+.headerLogo h1 {
+  margin: 0;
+  display: flex;
+}
+
+.headerLogo h1 span {
+  display: block;
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .headerContainer {
+    padding: 15px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .headerLogo {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .headerLogo {
+    font-size: 1.8rem;
+  }
+}

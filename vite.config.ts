@@ -1,9 +1,17 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import svgr from "vite-plugin-svgr";
 import path from "path";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    svgr({
+      svgrOptions: {
+        icon: true,
+      },
+    }),
+  ],
   resolve: {
     alias: {
       "@assets": path.resolve(__dirname, "./src/assets"),
@@ -24,11 +32,19 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: undefined,
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          redux: ["@reduxjs/toolkit", "react-redux", "redux-persist"],
+          router: ["react-router-dom"],
+          ui: ["react-bootstrap", "bootstrap"],
+        },
       },
     },
   },
   define: {
     global: "globalThis",
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom", "react-router-dom"],
   },
 });

@@ -1,0 +1,152 @@
+.heart-icon {
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heart-icon:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.heart-filled {
+  animation: heartBeat 0.6s ease-in-out;
+  cursor: pointer;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(0.9);
+  }
+  40% {
+    transform: scale(1.15);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cart-icon {
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-icon:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+.empty-icon {
+  animation: float 4s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+.soft-shadow {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: filter 0.3s ease;
+}
+
+.soft-shadow:hover {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.loading-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.gradient-icon {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bounce-on-click {
+  transition: transform 0.1s ease;
+}
+
+.bounce-on-click:active {
+  transform: scale(0.95);
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .heart-icon:hover,
+  .cart-icon:hover {
+    transform: none;
+  }
+
+  .empty-icon {
+    animation: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .soft-shadow {
+    filter: none;
+  }
+
+  .empty-icon {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart-icon,
+  .cart-icon,
+  .empty-icon,
+  .loading-pulse,
+  .fade-in {
+    animation: none;
+    transition: none;
+  }
+}

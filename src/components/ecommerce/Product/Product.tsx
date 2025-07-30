@@ -2,14 +2,14 @@ import { useEffect, useState, memo } from "react";
 import { useAppDispatch } from "@store/hooks";
 import { actLikeToggle } from "@store/wishlist/wishlistSlice";
 import { addToCart } from "@store/cart/cartSlice";
-import Like from "@assets/svg/like.svg?react";
-import LikeFill from "@assets/svg/like-fill.svg?react";
+import { LikeIcon, LikeFillIcon } from "@components/icons";
 import ProductInfo from "../ProductInfo/ProductInfo";
 import { Button, Spinner, Modal } from "react-bootstrap";
 import type { TProduct } from "@types";
 
 import styles from "./styles.module.css";
-const { productImg, maximumNotice, wishlistBtn } = styles;
+
+const { maximumNotice, wishlistBtn } = styles;
 
 const Product = memo(
   ({
@@ -26,12 +26,11 @@ const Product = memo(
 
     const [showModal, setShowModal] = useState(false);
     const [isBtnDisabled, setIsBtnDisabled] = useState(false);
-
     const [isLoading, setIsLoading] = useState(false);
 
     const currentRemainingQuantity = max - (quantity ?? 0);
 
-    const quantityReachedToMax = currentRemainingQuantity <= 0 ? true : false;
+    const quantityReachedToMax = currentRemainingQuantity <= 0;
 
     useEffect(() => {
       if (!isBtnDisabled) {
@@ -76,25 +75,34 @@ const Product = memo(
         </Modal>
 
         <ProductInfo title={title} price={price} img={img}>
-          <div className={wishlistBtn} onClick={likeToggleHandler}>
+          <div
+            className={wishlistBtn}
+            onClick={likeToggleHandler}
+            role="button"
+            aria-label={isLiked ? "Remove from wishlist" : "Add to wishlist"}
+            tabIndex={0}
+          >
             {isLoading ? (
               <Spinner animation="border" size="sm" variant="primary" />
             ) : isLiked ? (
-              <LikeFill />
+              <LikeFillIcon className="bounce-on-click" />
             ) : (
-              <Like />
+              <LikeIcon className="bounce-on-click" />
             )}
           </div>
+
           <p className={maximumNotice}>
             {quantityReachedToMax
               ? "You reached to the limit"
               : `You can add ${currentRemainingQuantity} item(s)`}
           </p>
+
           <Button
             variant="info"
             style={{ color: "white", width: "100%" }}
             onClick={addToCartHandler}
             disabled={isBtnDisabled || quantityReachedToMax}
+            aria-label={`Add ${title} to cart`}
           >
             {isBtnDisabled ? (
               <>
@@ -109,5 +117,7 @@ const Product = memo(
     );
   }
 );
+
+Product.displayName = "Product";
 
 export default Product;
